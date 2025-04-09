@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LiteMinePro</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #111; color: white; margin: 0; padding: 0; }
+    .container { padding: 2em; max-width: 800px; margin: auto; }
+    .warning-box {
+      background: #2a0000; border-left: 6px solid red; padding: 1em; margin-bottom: 2em;
+      border-radius: 10px;
+    }
+    .warning-box h2 { color: #ff4d4d; }
+    .address-box {
+      font-size: 1.2em; font-weight: bold; background: #222; padding: 1em; border-radius: 8px;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .copy-btn {
+      background: #444; color: white; border: none; padding: 0.5em 1em;
+      cursor: pointer; border-radius: 5px; margin-left: 1em;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="warning-box">
+      <h2>Warning!</h2>
+      <p>All deposits <strong>must</strong> be sent to the official LiteMinePro address below.<br>
+      <strong>Any payment sent to a different address will be lost and cannot be recovered.</strong></p>
+      <div class="address-box">
+        <span id="ltc-address">ltc1qaudjtktds3pg0zd93xw4naegq5h7lekrt5k2ff</span>
+        <button class="copy-btn" onclick="copyAddress()">Copy</button>
+      </div>
+    </div>
+  </div>
+  <script>
+    function copyAddress() {
+      const address = document.getElementById("ltc-address").textContent;
+      navigator.clipboard.writeText(address).then(() => {
+        alert("Address copied to clipboard!");
+      });
+    }
+  </script>
+</body>
+</html>
